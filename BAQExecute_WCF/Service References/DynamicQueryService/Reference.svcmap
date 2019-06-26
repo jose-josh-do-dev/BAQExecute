@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7a234cb0-f7f9-4b87-a159-b621934fbbba" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://e101.sixspartners.us:4443/ERP101500/Ice/BO/DynamicQuery.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DynamicQuery.xsd" MetadataType="Schema" ID="06273c99-b68d-41e6-a6f2-38e3c743f716" SourceId="1" SourceUrl="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd1" />
+    <MetadataFile FileName="DynamicQuery1.xsd" MetadataType="Schema" ID="1eb538d7-e720-438e-ab5a-9f6451ef1907" SourceId="1" SourceUrl="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd0" />
+    <MetadataFile FileName="DynamicQuerySvcFacade.wsdl" MetadataType="Wsdl" ID="1dc8fd4e-77f6-4cd2-9eda-634fbdb2becc" SourceId="1" SourceUrl="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?wsdl" />
+    <MetadataFile FileName="DynamicQuery2.xsd" MetadataType="Schema" ID="cf2a145b-255a-4b1b-8095-8828666950af" SourceId="1" SourceUrl="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd2" />
+    <MetadataFile FileName="DynamicQuery.wsdl" MetadataType="Wsdl" ID="38af9cf3-0372-473c-8fc4-e2002eae2337" SourceId="1" SourceUrl="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="DynamicQuery3.xsd" MetadataType="Schema" ID="27442a8e-d2d5-4d6d-801d-b4430b4f2dcc" SourceId="1" SourceUrl="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd4" />
+    <MetadataFile FileName="DynamicQuery.disco" MetadataType="Disco" ID="e7af1fdf-188b-4093-8866-7171304432bd" SourceId="1" SourceUrl="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?disco" />
+    <MetadataFile FileName="DynamicQuery4.xsd" MetadataType="Schema" ID="957230d4-eff2-40fd-8b4f-86ab006ef1e1" SourceId="1" SourceUrl="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd6" />
+    <MetadataFile FileName="DynamicQuery5.xsd" MetadataType="Schema" ID="824449d5-bf01-4569-abc3-f307803c985f" SourceId="1" SourceUrl="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd8" />
+    <MetadataFile FileName="DynamicQuery6.xsd" MetadataType="Schema" ID="36048ff3-b305-45b6-8fe5-7bc55cf83350" SourceId="1" SourceUrl="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd7" />
+    <MetadataFile FileName="DynamicQuery7.xsd" MetadataType="Schema" ID="2a58365a-899f-4bd8-a6c0-b57778860075" SourceId="1" SourceUrl="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd3" />
+    <MetadataFile FileName="DynamicQuery8.xsd" MetadataType="Schema" ID="34e13dbe-a758-4bc2-a5ab-5b0c89616658" SourceId="1" SourceUrl="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd5" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Ice:BO:DynamicQuery" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Ice:BO:DynamicQuery" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Ice:BO:DynamicQuery/Imports">
+      <xsd:import schemaLocation="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd0" namespace="Ice:BO:DynamicQuery" />
+      <xsd:import schemaLocation="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Ice.Common" />
+      <xsd:import schemaLocation="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ice.Tablesets" />
+      <xsd:import schemaLocation="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Ice" />
+      <xsd:import schemaLocation="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Epicor.Data" />
+      <xsd:import schemaLocation="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd6" namespace="http://epicor.com/UserDefinedColumns" />
+      <xsd:import schemaLocation="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd8" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="DynamicQuerySvcContract_GetByIDs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIDs" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetByIDs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetByIDs_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q1:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_ExecuteByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteByID" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_ExecuteByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_ExecuteByID_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q2:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_Execute_InputMessage">
+    <wsdl:part name="parameters" element="tns:Execute" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_Execute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_Execute_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q3:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_CheckTestQueryExecution_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTestQueryExecution" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_CheckTestQueryExecution_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTestQueryExecutionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_CheckTestQueryExecution_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q4:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryExecutionPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryExecutionPlan" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryExecutionPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryExecutionPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryExecutionPlan_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q5:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryListFromLike_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryListFromLike" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryListFromLike_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryListFromLikeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryListFromLike_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q6:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryExecutionParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryExecutionParameters" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryExecutionParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryExecutionParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryExecutionParameters_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q7:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryExecutionParametersByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryExecutionParametersByID" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryExecutionParametersByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryExecutionParametersByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryExecutionParametersByID_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q8:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryEmptyResultSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryEmptyResultSet" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryEmptyResultSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryEmptyResultSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryEmptyResultSet_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q9:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryEmptyResultSetByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryEmptyResultSetByID" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryEmptyResultSetByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryEmptyResultSetByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryEmptyResultSetByID_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q10:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryEmptyResultSetByIDAndCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryEmptyResultSetByIDAndCompany" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryEmptyResultSetByIDAndCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryEmptyResultSetByIDAndCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryEmptyResultSetByIDAndCompany_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q11:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_Analyze_InputMessage">
+    <wsdl:part name="parameters" element="tns:Analyze" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_Analyze_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnalyzeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_Analyze_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q12:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetRows_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRows" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetRows_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetRows_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q13:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryList" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetQueryList_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q14:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetList" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetList_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q15:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetListByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListByID" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetListByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetListByID_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q16:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_Update_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q17:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_UpdateByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateByID" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_UpdateByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_UpdateByID_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q18:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNew" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetNew_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q19:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetNewByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewByID" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetNewByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetNewByID_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q20:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_FieldUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:FieldUpdate" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_FieldUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FieldUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_FieldUpdate_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q21:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_FieldUpdateByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:FieldUpdateByID" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_FieldUpdateByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FieldUpdateByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_FieldUpdateByID_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q22:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_FieldValidate_InputMessage">
+    <wsdl:part name="parameters" element="tns:FieldValidate" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_FieldValidate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FieldValidateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_FieldValidate_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q23:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_FieldValidateByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:FieldValidateByID" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_FieldValidateByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FieldValidateByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_FieldValidateByID_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q24:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_RunCustomAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:RunCustomAction" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_RunCustomAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RunCustomActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_RunCustomAction_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q25:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_RunCustomActionByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:RunCustomActionByID" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_RunCustomActionByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RunCustomActionByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_RunCustomActionByID_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q26:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetDistinctValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistinctValues" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetDistinctValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistinctValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetDistinctValues_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q27:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByID" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DynamicQuerySvcContract_GetByID_EpicorFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/Ice.Common" name="detail" element="q28:EpicorFaultDetail" />
+  </wsdl:message>
+  <wsdl:portType name="DynamicQuerySvcContract">
+    <wsdl:operation name="GetByIDs">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetByIDs" message="tns:DynamicQuerySvcContract_GetByIDs_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetByIDsResponse" message="tns:DynamicQuerySvcContract_GetByIDs_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetByIDsEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_GetByIDs_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteByID">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/ExecuteByID" message="tns:DynamicQuerySvcContract_ExecuteByID_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/ExecuteByIDResponse" message="tns:DynamicQuerySvcContract_ExecuteByID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/ExecuteByIDEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_ExecuteByID_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Execute">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/Execute" message="tns:DynamicQuerySvcContract_Execute_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/ExecuteResponse" message="tns:DynamicQuerySvcContract_Execute_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/ExecuteEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_Execute_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTestQueryExecution">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/CheckTestQueryExecution" message="tns:DynamicQuerySvcContract_CheckTestQueryExecution_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/CheckTestQueryExecutionResponse" message="tns:DynamicQuerySvcContract_CheckTestQueryExecution_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/CheckTestQueryExecutionEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_CheckTestQueryExecution_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryExecutionPlan">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryExecutionPlan" message="tns:DynamicQuerySvcContract_GetQueryExecutionPlan_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryExecutionPlanResponse" message="tns:DynamicQuerySvcContract_GetQueryExecutionPlan_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryExecutionPlanEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_GetQueryExecutionPlan_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryListFromLike">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryListFromLike" message="tns:DynamicQuerySvcContract_GetQueryListFromLike_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryListFromLikeResponse" message="tns:DynamicQuerySvcContract_GetQueryListFromLike_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryListFromLikeEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_GetQueryListFromLike_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryExecutionParameters">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryExecutionParameters" message="tns:DynamicQuerySvcContract_GetQueryExecutionParameters_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryExecutionParametersResponse" message="tns:DynamicQuerySvcContract_GetQueryExecutionParameters_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryExecutionParametersEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_GetQueryExecutionParameters_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryExecutionParametersByID">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryExecutionParametersByID" message="tns:DynamicQuerySvcContract_GetQueryExecutionParametersByID_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryExecutionParametersByIDResponse" message="tns:DynamicQuerySvcContract_GetQueryExecutionParametersByID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryExecutionParametersByIDEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_GetQueryExecutionParametersByID_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryEmptyResultSet">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryEmptyResultSet" message="tns:DynamicQuerySvcContract_GetQueryEmptyResultSet_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryEmptyResultSetResponse" message="tns:DynamicQuerySvcContract_GetQueryEmptyResultSet_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryEmptyResultSetEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_GetQueryEmptyResultSet_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryEmptyResultSetByID">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryEmptyResultSetByID" message="tns:DynamicQuerySvcContract_GetQueryEmptyResultSetByID_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryEmptyResultSetByIDResponse" message="tns:DynamicQuerySvcContract_GetQueryEmptyResultSetByID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryEmptyResultSetByIDEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_GetQueryEmptyResultSetByID_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryEmptyResultSetByIDAndCompany">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryEmptyResultSetByIDAndCompany" message="tns:DynamicQuerySvcContract_GetQueryEmptyResultSetByIDAndCompany_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryEmptyResultSetByIDAndCompanyResponse" message="tns:DynamicQuerySvcContract_GetQueryEmptyResultSetByIDAndCompany_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryEmptyResultSetByIDAndCompanyEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_GetQueryEmptyResultSetByIDAndCompany_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Analyze">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/Analyze" message="tns:DynamicQuerySvcContract_Analyze_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/AnalyzeResponse" message="tns:DynamicQuerySvcContract_Analyze_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/AnalyzeEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_Analyze_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRows">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetRows" message="tns:DynamicQuerySvcContract_GetRows_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetRowsResponse" message="tns:DynamicQuerySvcContract_GetRows_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetRowsEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_GetRows_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryList">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryList" message="tns:DynamicQuerySvcContract_GetQueryList_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryListResponse" message="tns:DynamicQuerySvcContract_GetQueryList_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetQueryListEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_GetQueryList_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetList">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetList" message="tns:DynamicQuerySvcContract_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetListResponse" message="tns:DynamicQuerySvcContract_GetList_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetListEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_GetList_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListByID">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetListByID" message="tns:DynamicQuerySvcContract_GetListByID_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetListByIDResponse" message="tns:DynamicQuerySvcContract_GetListByID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetListByIDEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_GetListByID_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/Update" message="tns:DynamicQuerySvcContract_Update_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/UpdateResponse" message="tns:DynamicQuerySvcContract_Update_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/UpdateEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_Update_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateByID">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/UpdateByID" message="tns:DynamicQuerySvcContract_UpdateByID_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/UpdateByIDResponse" message="tns:DynamicQuerySvcContract_UpdateByID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/UpdateByIDEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_UpdateByID_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNew">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetNew" message="tns:DynamicQuerySvcContract_GetNew_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetNewResponse" message="tns:DynamicQuerySvcContract_GetNew_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetNewEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_GetNew_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewByID">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetNewByID" message="tns:DynamicQuerySvcContract_GetNewByID_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetNewByIDResponse" message="tns:DynamicQuerySvcContract_GetNewByID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetNewByIDEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_GetNewByID_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FieldUpdate">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/FieldUpdate" message="tns:DynamicQuerySvcContract_FieldUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/FieldUpdateResponse" message="tns:DynamicQuerySvcContract_FieldUpdate_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/FieldUpdateEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_FieldUpdate_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FieldUpdateByID">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/FieldUpdateByID" message="tns:DynamicQuerySvcContract_FieldUpdateByID_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/FieldUpdateByIDResponse" message="tns:DynamicQuerySvcContract_FieldUpdateByID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/FieldUpdateByIDEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_FieldUpdateByID_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FieldValidate">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/FieldValidate" message="tns:DynamicQuerySvcContract_FieldValidate_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/FieldValidateResponse" message="tns:DynamicQuerySvcContract_FieldValidate_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/FieldValidateEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_FieldValidate_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FieldValidateByID">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/FieldValidateByID" message="tns:DynamicQuerySvcContract_FieldValidateByID_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/FieldValidateByIDResponse" message="tns:DynamicQuerySvcContract_FieldValidateByID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/FieldValidateByIDEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_FieldValidateByID_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RunCustomAction">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/RunCustomAction" message="tns:DynamicQuerySvcContract_RunCustomAction_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/RunCustomActionResponse" message="tns:DynamicQuerySvcContract_RunCustomAction_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/RunCustomActionEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_RunCustomAction_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RunCustomActionByID">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/RunCustomActionByID" message="tns:DynamicQuerySvcContract_RunCustomActionByID_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/RunCustomActionByIDResponse" message="tns:DynamicQuerySvcContract_RunCustomActionByID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/RunCustomActionByIDEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_RunCustomActionByID_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistinctValues">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetDistinctValues" message="tns:DynamicQuerySvcContract_GetDistinctValues_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetDistinctValuesResponse" message="tns:DynamicQuerySvcContract_GetDistinctValues_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetDistinctValuesEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_GetDistinctValues_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByID">
+      <wsdl:input wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetByID" message="tns:DynamicQuerySvcContract_GetByID_InputMessage" />
+      <wsdl:output wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetByIDResponse" message="tns:DynamicQuerySvcContract_GetByID_OutputMessage" />
+      <wsdl:fault wsaw:Action="Ice:BO:DynamicQuery/DynamicQuerySvcContract/GetByIDEpicorFaultDetailFault" name="EpicorFaultDetailFault" message="tns:DynamicQuerySvcContract_GetByID_EpicorFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

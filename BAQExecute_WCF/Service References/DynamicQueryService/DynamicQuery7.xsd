@@ -1,0 +1,1200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Ice.Tablesets" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ice.Tablesets" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Ice" />
+  <xs:import schemaLocation="http://e101.sixspartners.us/ERP101500/Ice/BO/DynamicQuery.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="DynamicQueryTableset">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Ice" base="q1:IceTableset">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DynamicQuery" nillable="true" type="tns:DynamicQueryTable" />
+          <xs:element minOccurs="0" name="QueryCtrl" nillable="true" type="tns:QueryCtrlTable" />
+          <xs:element minOccurs="0" name="QueryCtrlValues" nillable="true" type="tns:QueryCtrlValuesTable" />
+          <xs:element minOccurs="0" name="QueryCustomAction" nillable="true" type="tns:QueryCustomActionTable" />
+          <xs:element minOccurs="0" name="QueryExecuteSetting" nillable="true" type="tns:QueryExecuteSettingTable" />
+          <xs:element minOccurs="0" name="QueryField" nillable="true" type="tns:QueryFieldTable" />
+          <xs:element minOccurs="0" name="QueryFieldAttribute" nillable="true" type="tns:QueryFieldAttributeTable" />
+          <xs:element minOccurs="0" name="QueryFunctionCall" nillable="true" type="tns:QueryFunctionCallTable" />
+          <xs:element minOccurs="0" name="QueryGroupBy" nillable="true" type="tns:QueryGroupByTable" />
+          <xs:element minOccurs="0" name="QueryParameter" nillable="true" type="tns:QueryParameterTable" />
+          <xs:element minOccurs="0" name="QueryRelation" nillable="true" type="tns:QueryRelationTable" />
+          <xs:element minOccurs="0" name="QueryRelationField" nillable="true" type="tns:QueryRelationFieldTable" />
+          <xs:element minOccurs="0" name="QuerySortBy" nillable="true" type="tns:QuerySortByTable" />
+          <xs:element minOccurs="0" name="QuerySubQuery" nillable="true" type="tns:QuerySubQueryTable" />
+          <xs:element minOccurs="0" name="QueryTable" nillable="true" type="tns:QueryTableTable" />
+          <xs:element minOccurs="0" name="QueryUpdateField" nillable="true" type="tns:QueryUpdateFieldTable" />
+          <xs:element minOccurs="0" name="QueryUpdateSettings" nillable="true" type="tns:QueryUpdateSettingsTable" />
+          <xs:element minOccurs="0" name="QueryValueSetItems" nillable="true" type="tns:QueryValueSetItemsTable" />
+          <xs:element minOccurs="0" name="QueryWhereItem" nillable="true" type="tns:QueryWhereItemTable" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DynamicQueryTableset" nillable="true" type="tns:DynamicQueryTableset" />
+  <xs:complexType name="DynamicQueryTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DynamicQueryRow" nillable="true" type="tns:DynamicQueryRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DynamicQueryTable" nillable="true" type="tns:DynamicQueryTable" />
+  <xs:complexType name="DynamicQueryRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Ice" base="q2:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllCompanies" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AuthorID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="CGCCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:DynamicQueryRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayPhrase" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExtDatasourceName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExtQuery" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GlbCompany" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsShared" type="xs:boolean" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="SystemFlag" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Updatable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XCompany" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DynamicQueryRow" nillable="true" type="tns:DynamicQueryRow" />
+  <xs:simpleType name="DynamicQueryRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="AuthorID" />
+      <xs:enumeration value="Description" />
+      <xs:enumeration value="DisplayPhrase" />
+      <xs:enumeration value="IsShared" />
+      <xs:enumeration value="Version" />
+      <xs:enumeration value="CGCCode" />
+      <xs:enumeration value="XCompany" />
+      <xs:enumeration value="GlbCompany" />
+      <xs:enumeration value="Updatable" />
+      <xs:enumeration value="ExtQuery" />
+      <xs:enumeration value="ExtDatasourceName" />
+      <xs:enumeration value="SystemFlag" />
+      <xs:enumeration value="Extension" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="AllCompanies" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DynamicQueryRowColumnOrder" nillable="true" type="tns:DynamicQueryRowColumnOrder" />
+  <xs:complexType name="QueryCtrlTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryCtrlRow" nillable="true" type="tns:QueryCtrlRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryCtrlTable" nillable="true" type="tns:QueryCtrlTable" />
+  <xs:complexType name="QueryCtrlRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Ice" base="q3:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QueryCtrlRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ControlID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ControlType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataSource" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayColumn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FieldFormat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsMandatory" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ListSource" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Seq" type="xs:int" />
+          <xs:element minOccurs="0" name="SourceType" type="xs:int" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="ValueColumn" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryCtrlRow" nillable="true" type="tns:QueryCtrlRow" />
+  <xs:simpleType name="QueryCtrlRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="ControlID" />
+      <xs:enumeration value="DataSource" />
+      <xs:enumeration value="DataType" />
+      <xs:enumeration value="FieldFormat" />
+      <xs:enumeration value="IsMandatory" />
+      <xs:enumeration value="DefaultValue" />
+      <xs:enumeration value="ControlType" />
+      <xs:enumeration value="SourceType" />
+      <xs:enumeration value="ListSource" />
+      <xs:enumeration value="DisplayColumn" />
+      <xs:enumeration value="ValueColumn" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="Seq" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryCtrlRowColumnOrder" nillable="true" type="tns:QueryCtrlRowColumnOrder" />
+  <xs:complexType name="QueryCtrlValuesTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryCtrlValuesRow" nillable="true" type="tns:QueryCtrlValuesRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryCtrlValuesTable" nillable="true" type="tns:QueryCtrlValuesTable" />
+  <xs:complexType name="QueryCtrlValuesRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Ice" base="q4:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QueryCtrlValuesRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ControlID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Seq" type="xs:int" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="Val" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryCtrlValuesRow" nillable="true" type="tns:QueryCtrlValuesRow" />
+  <xs:simpleType name="QueryCtrlValuesRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="ControlID" />
+      <xs:enumeration value="ID" />
+      <xs:enumeration value="Val" />
+      <xs:enumeration value="Seq" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryCtrlValuesRowColumnOrder" nillable="true" type="tns:QueryCtrlValuesRowColumnOrder" />
+  <xs:complexType name="QueryCustomActionTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryCustomActionRow" nillable="true" type="tns:QueryCustomActionRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryCustomActionTable" nillable="true" type="tns:QueryCustomActionTable" />
+  <xs:complexType name="QueryCustomActionRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Ice" base="q5:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActionID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ActionLabel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QueryCustomActionRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryCustomActionRow" nillable="true" type="tns:QueryCustomActionRow" />
+  <xs:simpleType name="QueryCustomActionRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="ActionID" />
+      <xs:enumeration value="ActionLabel" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryCustomActionRowColumnOrder" nillable="true" type="tns:QueryCustomActionRowColumnOrder" />
+  <xs:complexType name="QueryExecuteSettingTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryExecuteSettingRow" nillable="true" type="tns:QueryExecuteSettingRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryExecuteSettingTable" nillable="true" type="tns:QueryExecuteSettingTable" />
+  <xs:complexType name="QueryExecuteSettingRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Ice" base="q6:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QueryExecuteSettingRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SettingID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SettingValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="SystemFlag" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryExecuteSettingRow" nillable="true" type="tns:QueryExecuteSettingRow" />
+  <xs:simpleType name="QueryExecuteSettingRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="SettingID" />
+      <xs:enumeration value="SettingValue" />
+      <xs:enumeration value="SystemFlag" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryExecuteSettingRowColumnOrder" nillable="true" type="tns:QueryExecuteSettingRowColumnOrder" />
+  <xs:complexType name="QueryFieldTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryFieldRow" nillable="true" type="tns:QueryFieldRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryFieldTable" nillable="true" type="tns:QueryFieldTable" />
+  <xs:complexType name="QueryFieldRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Ice" base="q7:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Aggregation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QueryFieldRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DBFieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DBSchemaName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DBTableName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DropDown" type="xs:boolean" />
+          <xs:element minOccurs="0" name="External" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FieldFormat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FieldLabel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Formula" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsCalculated" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsGroupBy" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LikeDataFieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LikeDataFieldSeq" type="xs:int" />
+          <xs:element minOccurs="0" name="LikeDataFieldTableID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QuickSearchID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RaiseEvent" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Seq" type="xs:int" />
+          <xs:element minOccurs="0" name="SubQueryID" type="ser:guid" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="TableID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UpdInitExpression" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Updatable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UseLike" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryFieldRow" nillable="true" type="tns:QueryFieldRow" />
+  <xs:simpleType name="QueryFieldRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="SubQueryID" />
+      <xs:enumeration value="TableID" />
+      <xs:enumeration value="FieldName" />
+      <xs:enumeration value="Seq" />
+      <xs:enumeration value="DBSchemaName" />
+      <xs:enumeration value="DBTableName" />
+      <xs:enumeration value="DBFieldName" />
+      <xs:enumeration value="DataType" />
+      <xs:enumeration value="Description" />
+      <xs:enumeration value="External" />
+      <xs:enumeration value="IsCalculated" />
+      <xs:enumeration value="Formula" />
+      <xs:enumeration value="FieldFormat" />
+      <xs:enumeration value="FieldLabel" />
+      <xs:enumeration value="LikeDataFieldTableID" />
+      <xs:enumeration value="LikeDataFieldSeq" />
+      <xs:enumeration value="Aggregation" />
+      <xs:enumeration value="IsGroupBy" />
+      <xs:enumeration value="UseLike" />
+      <xs:enumeration value="LikeDataFieldName" />
+      <xs:enumeration value="Updatable" />
+      <xs:enumeration value="RaiseEvent" />
+      <xs:enumeration value="QuickSearchID" />
+      <xs:enumeration value="DropDown" />
+      <xs:enumeration value="UpdInitExpression" />
+      <xs:enumeration value="Alias" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="DisplayName" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryFieldRowColumnOrder" nillable="true" type="tns:QueryFieldRowColumnOrder" />
+  <xs:complexType name="QueryFieldAttributeTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryFieldAttributeRow" nillable="true" type="tns:QueryFieldAttributeRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryFieldAttributeTable" nillable="true" type="tns:QueryFieldAttributeTable" />
+  <xs:complexType name="QueryFieldAttributeRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/Ice" base="q8:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttributeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QueryFieldAttributeRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsOverriden" type="xs:boolean" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubQueryID" type="ser:guid" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="SystemFlag" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TableID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryFieldAttributeRow" nillable="true" type="tns:QueryFieldAttributeRow" />
+  <xs:simpleType name="QueryFieldAttributeRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="SubQueryID" />
+      <xs:enumeration value="TableID" />
+      <xs:enumeration value="FieldName" />
+      <xs:enumeration value="AttributeName" />
+      <xs:enumeration value="Value" />
+      <xs:enumeration value="SystemFlag" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="IsOverriden" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryFieldAttributeRowColumnOrder" nillable="true" type="tns:QueryFieldAttributeRowColumnOrder" />
+  <xs:complexType name="QueryFunctionCallTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryFunctionCallRow" nillable="true" type="tns:QueryFunctionCallRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryFunctionCallTable" nillable="true" type="tns:QueryFunctionCallTable" />
+  <xs:complexType name="QueryFunctionCallRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/Ice" base="q9:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QueryFunctionCallRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FunctionID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParameterName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Seq" type="xs:int" />
+          <xs:element minOccurs="0" name="SubQueryID" type="ser:guid" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="SystemFlag" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryFunctionCallRow" nillable="true" type="tns:QueryFunctionCallRow" />
+  <xs:simpleType name="QueryFunctionCallRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="SubQueryID" />
+      <xs:enumeration value="FunctionID" />
+      <xs:enumeration value="ParameterName" />
+      <xs:enumeration value="Seq" />
+      <xs:enumeration value="Value" />
+      <xs:enumeration value="DataType" />
+      <xs:enumeration value="SystemFlag" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryFunctionCallRowColumnOrder" nillable="true" type="tns:QueryFunctionCallRowColumnOrder" />
+  <xs:complexType name="QueryGroupByTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryGroupByRow" nillable="true" type="tns:QueryGroupByRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryGroupByTable" nillable="true" type="tns:QueryGroupByTable" />
+  <xs:complexType name="QueryGroupByRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/Ice" base="q10:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QueryGroupByRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Expression" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GroupByID" type="ser:guid" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Seq" type="xs:int" />
+          <xs:element minOccurs="0" name="SubQueryID" type="ser:guid" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="SystemFlag" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryGroupByRow" nillable="true" type="tns:QueryGroupByRow" />
+  <xs:simpleType name="QueryGroupByRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="SubQueryID" />
+      <xs:enumeration value="GroupByID" />
+      <xs:enumeration value="Expression" />
+      <xs:enumeration value="Seq" />
+      <xs:enumeration value="SystemFlag" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryGroupByRowColumnOrder" nillable="true" type="tns:QueryGroupByRowColumnOrder" />
+  <xs:complexType name="QueryParameterTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryParameterRow" nillable="true" type="tns:QueryParameterRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryParameterTable" nillable="true" type="tns:QueryParameterTable" />
+  <xs:complexType name="QueryParameterRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/Ice" base="q11:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QueryParameterRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParameterID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParameterLabel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParameterType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SkipIfEmpty" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryParameterRow" nillable="true" type="tns:QueryParameterRow" />
+  <xs:simpleType name="QueryParameterRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="ParameterID" />
+      <xs:enumeration value="ParameterType" />
+      <xs:enumeration value="ParameterLabel" />
+      <xs:enumeration value="SkipIfEmpty" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryParameterRowColumnOrder" nillable="true" type="tns:QueryParameterRowColumnOrder" />
+  <xs:complexType name="QueryRelationTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryRelationRow" nillable="true" type="tns:QueryRelationRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryRelationTable" nillable="true" type="tns:QueryRelationTable" />
+  <xs:complexType name="QueryRelationRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/Ice" base="q12:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ChildTableID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QueryRelationRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsFK" type="xs:boolean" />
+          <xs:element minOccurs="0" name="JoinType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OuterJoin" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ParentTableID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RelationID" type="ser:guid" />
+          <xs:element minOccurs="0" name="SubQueryID" type="ser:guid" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryRelationRow" nillable="true" type="tns:QueryRelationRow" />
+  <xs:simpleType name="QueryRelationRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="SubQueryID" />
+      <xs:enumeration value="RelationID" />
+      <xs:enumeration value="IsFK" />
+      <xs:enumeration value="ParentTableID" />
+      <xs:enumeration value="ChildTableID" />
+      <xs:enumeration value="JoinType" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="OuterJoin" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryRelationRowColumnOrder" nillable="true" type="tns:QueryRelationRowColumnOrder" />
+  <xs:complexType name="QueryRelationFieldTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryRelationFieldRow" nillable="true" type="tns:QueryRelationFieldRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryRelationFieldTable" nillable="true" type="tns:QueryRelationFieldTable" />
+  <xs:complexType name="QueryRelationFieldRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/Ice" base="q13:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AndOr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ChildFieldDataType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChildFieldIsExpr" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ChildFieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QueryRelationFieldRowColumnOrder" />
+          <xs:element minOccurs="0" name="CompOp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LeftP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Neg" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ParentFieldDataType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentFieldIsExpr" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ParentFieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RelationID" type="ser:guid" />
+          <xs:element minOccurs="0" name="RightP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Seq" type="xs:int" />
+          <xs:element minOccurs="0" name="SubQueryID" type="ser:guid" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryRelationFieldRow" nillable="true" type="tns:QueryRelationFieldRow" />
+  <xs:simpleType name="QueryRelationFieldRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="SubQueryID" />
+      <xs:enumeration value="RelationID" />
+      <xs:enumeration value="Seq" />
+      <xs:enumeration value="ParentFieldName" />
+      <xs:enumeration value="ParentFieldDataType" />
+      <xs:enumeration value="ParentFieldIsExpr" />
+      <xs:enumeration value="ChildFieldName" />
+      <xs:enumeration value="ChildFieldDataType" />
+      <xs:enumeration value="ChildFieldIsExpr" />
+      <xs:enumeration value="AndOr" />
+      <xs:enumeration value="Neg" />
+      <xs:enumeration value="LeftP" />
+      <xs:enumeration value="RightP" />
+      <xs:enumeration value="CompOp" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryRelationFieldRowColumnOrder" nillable="true" type="tns:QueryRelationFieldRowColumnOrder" />
+  <xs:complexType name="QuerySortByTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QuerySortByRow" nillable="true" type="tns:QuerySortByRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QuerySortByTable" nillable="true" type="tns:QuerySortByTable" />
+  <xs:complexType name="QuerySortByRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/Ice" base="q14:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QuerySortByRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsAsc" type="xs:boolean" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Seq" type="xs:int" />
+          <xs:element minOccurs="0" name="SubQueryID" type="ser:guid" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="TableID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QuerySortByRow" nillable="true" type="tns:QuerySortByRow" />
+  <xs:simpleType name="QuerySortByRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="SubQueryID" />
+      <xs:enumeration value="TableID" />
+      <xs:enumeration value="FieldName" />
+      <xs:enumeration value="Seq" />
+      <xs:enumeration value="IsAsc" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="DisplayName" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QuerySortByRowColumnOrder" nillable="true" type="tns:QuerySortByRowColumnOrder" />
+  <xs:complexType name="QuerySubQueryTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QuerySubQueryRow" nillable="true" type="tns:QuerySubQueryRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QuerySubQueryTable" nillable="true" type="tns:QuerySubQueryTable" />
+  <xs:complexType name="QuerySubQueryRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/Ice" base="q15:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QuerySubQueryRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsUnion" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LeftP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrderByFetch" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrderByOffSet" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RightP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SelectListClause" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Seq" type="xs:int" />
+          <xs:element minOccurs="0" name="SubQueryID" type="ser:guid" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="TopInPercent" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TopRowExpr" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TopWithTies" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QuerySubQueryRow" nillable="true" type="tns:QuerySubQueryRow" />
+  <xs:simpleType name="QuerySubQueryRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="SubQueryID" />
+      <xs:enumeration value="Name" />
+      <xs:enumeration value="Type" />
+      <xs:enumeration value="Seq" />
+      <xs:enumeration value="IsUnion" />
+      <xs:enumeration value="LeftP" />
+      <xs:enumeration value="RightP" />
+      <xs:enumeration value="SelectListClause" />
+      <xs:enumeration value="TopRowExpr" />
+      <xs:enumeration value="TopInPercent" />
+      <xs:enumeration value="TopWithTies" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="OrderByOffSet" />
+      <xs:enumeration value="OrderByFetch" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QuerySubQueryRowColumnOrder" nillable="true" type="tns:QuerySubQueryRowColumnOrder" />
+  <xs:complexType name="QueryTableTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryTableRow" nillable="true" type="tns:QueryTableRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryTableTable" nillable="true" type="tns:QueryTableTable" />
+  <xs:complexType name="QueryTableRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/Ice" base="q16:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QueryTableRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DBSchemaName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DBTableName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsSummaryTable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsVisibleInDesigner" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Modifiers" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PivotDataType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PivotFieldFormat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PivotFunction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Seq" type="xs:int" />
+          <xs:element minOccurs="0" name="SubQueryID" type="ser:guid" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="SystemFlag" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TableID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TableType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryTableRow" nillable="true" type="tns:QueryTableRow" />
+  <xs:simpleType name="QueryTableRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="SubQueryID" />
+      <xs:enumeration value="TableID" />
+      <xs:enumeration value="Seq" />
+      <xs:enumeration value="DBSchemaName" />
+      <xs:enumeration value="DBTableName" />
+      <xs:enumeration value="TableType" />
+      <xs:enumeration value="IsSummaryTable" />
+      <xs:enumeration value="IsVisibleInDesigner" />
+      <xs:enumeration value="Modifiers" />
+      <xs:enumeration value="SystemFlag" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="PivotFunction" />
+      <xs:enumeration value="PivotDataType" />
+      <xs:enumeration value="PivotFieldFormat" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryTableRowColumnOrder" nillable="true" type="tns:QueryTableRowColumnOrder" />
+  <xs:complexType name="QueryUpdateFieldTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryUpdateFieldRow" nillable="true" type="tns:QueryUpdateFieldRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryUpdateFieldTable" nillable="true" type="tns:QueryUpdateFieldTable" />
+  <xs:complexType name="QueryUpdateFieldRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/Ice" base="q17:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QueryUpdateFieldRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Direction" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Expression" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsKeyField" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MapFieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MapTableName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NetDataType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QualifiedName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Required" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="SystemFlag" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryUpdateFieldRow" nillable="true" type="tns:QueryUpdateFieldRow" />
+  <xs:simpleType name="QueryUpdateFieldRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="MapTableName" />
+      <xs:enumeration value="MapFieldName" />
+      <xs:enumeration value="Direction" />
+      <xs:enumeration value="Expression" />
+      <xs:enumeration value="IsKeyField" />
+      <xs:enumeration value="SystemFlag" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="NetDataType" />
+      <xs:enumeration value="DataType" />
+      <xs:enumeration value="QualifiedName" />
+      <xs:enumeration value="Required" />
+      <xs:enumeration value="Description" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryUpdateFieldRowColumnOrder" nillable="true" type="tns:QueryUpdateFieldRowColumnOrder" />
+  <xs:complexType name="QueryUpdateSettingsTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryUpdateSettingsRow" nillable="true" type="tns:QueryUpdateSettingsRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryUpdateSettingsTable" nillable="true" type="tns:QueryUpdateSettingsTable" />
+  <xs:complexType name="QueryUpdateSettingsRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/Ice" base="q18:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddNewLabel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AllowAddNew" type="xs:boolean" />
+          <xs:element minOccurs="0" name="BOSystemCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QueryUpdateSettingsRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCCtxPwd" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCCtxUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCCtxUser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCUserID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCWorkflow" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SupportMDR" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="SystemFlag" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UpdatableBO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UpdatableType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UpdateMethod" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryUpdateSettingsRow" nillable="true" type="tns:QueryUpdateSettingsRow" />
+  <xs:simpleType name="QueryUpdateSettingsRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="AllowAddNew" />
+      <xs:enumeration value="AddNewLabel" />
+      <xs:enumeration value="SupportMDR" />
+      <xs:enumeration value="UpdatableType" />
+      <xs:enumeration value="UpdatableBO" />
+      <xs:enumeration value="BOSystemCode" />
+      <xs:enumeration value="UpdateMethod" />
+      <xs:enumeration value="SCUrl" />
+      <xs:enumeration value="SCWorkflow" />
+      <xs:enumeration value="SCCtxUser" />
+      <xs:enumeration value="SCCtxPwd" />
+      <xs:enumeration value="SystemFlag" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="SCUserID" />
+      <xs:enumeration value="SCPassword" />
+      <xs:enumeration value="SCCtxUrl" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryUpdateSettingsRowColumnOrder" nillable="true" type="tns:QueryUpdateSettingsRowColumnOrder" />
+  <xs:complexType name="QueryValueSetItemsTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryValueSetItemsRow" nillable="true" type="tns:QueryValueSetItemsRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryValueSetItemsTable" nillable="true" type="tns:QueryValueSetItemsTable" />
+  <xs:complexType name="QueryValueSetItemsRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/Ice" base="q19:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QueryValueSetItemsRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ItemValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="ValueSetID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryValueSetItemsRow" nillable="true" type="tns:QueryValueSetItemsRow" />
+  <xs:simpleType name="QueryValueSetItemsRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="ValueSetID" />
+      <xs:enumeration value="ItemValue" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryValueSetItemsRowColumnOrder" nillable="true" type="tns:QueryValueSetItemsRowColumnOrder" />
+  <xs:complexType name="QueryWhereItemTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryWhereItemRow" nillable="true" type="tns:QueryWhereItemRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryWhereItemTable" nillable="true" type="tns:QueryWhereItemTable" />
+  <xs:complexType name="QueryWhereItemRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/Ice" base="q20:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AndOr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BitFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:QueryWhereItemRowColumnOrder" />
+          <xs:element minOccurs="0" name="CompOp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CriteriaID" type="ser:guid" />
+          <xs:element minOccurs="0" name="CriteriaType" type="xs:int" />
+          <xs:element minOccurs="0" name="DataType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExtSecurity" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsConst" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LeftP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Neg" type="xs:boolean" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RightP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Seq" type="xs:int" />
+          <xs:element minOccurs="0" name="SubQueryID" type="ser:guid" />
+          <xs:element minOccurs="0" name="SysRevID" type="xs:long" />
+          <xs:element minOccurs="0" name="TableID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ToDataType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ToFieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ToTableID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryWhereItemRow" nillable="true" type="tns:QueryWhereItemRow" />
+  <xs:simpleType name="QueryWhereItemRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="SubQueryID" />
+      <xs:enumeration value="TableID" />
+      <xs:enumeration value="CriteriaID" />
+      <xs:enumeration value="Seq" />
+      <xs:enumeration value="FieldName" />
+      <xs:enumeration value="DataType" />
+      <xs:enumeration value="CompOp" />
+      <xs:enumeration value="AndOr" />
+      <xs:enumeration value="Neg" />
+      <xs:enumeration value="LeftP" />
+      <xs:enumeration value="RightP" />
+      <xs:enumeration value="IsConst" />
+      <xs:enumeration value="CriteriaType" />
+      <xs:enumeration value="ToTableID" />
+      <xs:enumeration value="ToFieldName" />
+      <xs:enumeration value="ToDataType" />
+      <xs:enumeration value="RValue" />
+      <xs:enumeration value="ExtSecurity" />
+      <xs:enumeration value="SysRevID" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="BitFlag" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryWhereItemRowColumnOrder" nillable="true" type="tns:QueryWhereItemRowColumnOrder" />
+  <xs:complexType name="QueryExecutionTableset">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/Ice" base="q21:IceTableset">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExecutionFilter" nillable="true" type="tns:ExecutionFilterTable" />
+          <xs:element minOccurs="0" name="ExecutionParameter" nillable="true" type="tns:ExecutionParameterTable" />
+          <xs:element minOccurs="0" name="ExecutionSetting" nillable="true" type="tns:ExecutionSettingTable" />
+          <xs:element minOccurs="0" name="ExecutionValueSetItems" nillable="true" type="tns:ExecutionValueSetItemsTable" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryExecutionTableset" nillable="true" type="tns:QueryExecutionTableset" />
+  <xs:complexType name="ExecutionFilterTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExecutionFilterRow" nillable="true" type="tns:ExecutionFilterRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExecutionFilterTable" nillable="true" type="tns:ExecutionFilterTable" />
+  <xs:complexType name="ExecutionFilterRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/Ice" base="q22:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:ExecutionFilterRowColumnOrder" />
+          <xs:element minOccurs="0" name="CompOp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataTableID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Neg" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExecutionFilterRow" nillable="true" type="tns:ExecutionFilterRow" />
+  <xs:simpleType name="ExecutionFilterRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DataTableID" />
+      <xs:enumeration value="FieldName" />
+      <xs:enumeration value="Neg" />
+      <xs:enumeration value="CompOp" />
+      <xs:enumeration value="RValue" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExecutionFilterRowColumnOrder" nillable="true" type="tns:ExecutionFilterRowColumnOrder" />
+  <xs:complexType name="ExecutionParameterTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExecutionParameterRow" nillable="true" type="tns:ExecutionParameterRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExecutionParameterTable" nillable="true" type="tns:ExecutionParameterTable" />
+  <xs:complexType name="ExecutionParameterRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/Ice" base="q23:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:ExecutionParameterRowColumnOrder" />
+          <xs:element minOccurs="0" name="IsEmpty" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ParameterID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParameterValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValueType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExecutionParameterRow" nillable="true" type="tns:ExecutionParameterRow" />
+  <xs:simpleType name="ExecutionParameterRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ParameterID" />
+      <xs:enumeration value="ParameterValue" />
+      <xs:enumeration value="ValueType" />
+      <xs:enumeration value="IsEmpty" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExecutionParameterRowColumnOrder" nillable="true" type="tns:ExecutionParameterRowColumnOrder" />
+  <xs:complexType name="ExecutionSettingTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExecutionSettingRow" nillable="true" type="tns:ExecutionSettingRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExecutionSettingTable" nillable="true" type="tns:ExecutionSettingTable" />
+  <xs:complexType name="ExecutionSettingRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/Ice" base="q24:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:ExecutionSettingRowColumnOrder" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExecutionSettingRow" nillable="true" type="tns:ExecutionSettingRow" />
+  <xs:simpleType name="ExecutionSettingRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Name" />
+      <xs:enumeration value="Value" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExecutionSettingRowColumnOrder" nillable="true" type="tns:ExecutionSettingRowColumnOrder" />
+  <xs:complexType name="ExecutionValueSetItemsTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExecutionValueSetItemsRow" nillable="true" type="tns:ExecutionValueSetItemsRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExecutionValueSetItemsTable" nillable="true" type="tns:ExecutionValueSetItemsTable" />
+  <xs:complexType name="ExecutionValueSetItemsRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/Ice" base="q25:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:ExecutionValueSetItemsRowColumnOrder" />
+          <xs:element minOccurs="0" name="ItemValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValueSetID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExecutionValueSetItemsRow" nillable="true" type="tns:ExecutionValueSetItemsRow" />
+  <xs:simpleType name="ExecutionValueSetItemsRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ValueSetID" />
+      <xs:enumeration value="ItemValue" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExecutionValueSetItemsRowColumnOrder" nillable="true" type="tns:ExecutionValueSetItemsRowColumnOrder" />
+  <xs:complexType name="DynamicQueryListTableset">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/Ice" base="q26:IceTableset">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DynamicQueryList" nillable="true" type="tns:DynamicQueryListTable" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DynamicQueryListTableset" nillable="true" type="tns:DynamicQueryListTableset" />
+  <xs:complexType name="DynamicQueryListTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DynamicQueryListRow" nillable="true" type="tns:DynamicQueryListRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DynamicQueryListTable" nillable="true" type="tns:DynamicQueryListTable" />
+  <xs:complexType name="DynamicQueryListRow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q27="http://schemas.datacontract.org/2004/07/Ice" base="q27:IceRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllCompanies" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AuthorID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CGCCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ColumnNames" type="tns:DynamicQueryListRowColumnOrder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExtQuery" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsShared" type="xs:boolean" />
+          <xs:element minOccurs="0" name="QueryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SystemFlag" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Updatable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="XCompany" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DynamicQueryListRow" nillable="true" type="tns:DynamicQueryListRow" />
+  <xs:simpleType name="DynamicQueryListRowColumnOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="QueryID" />
+      <xs:enumeration value="AuthorID" />
+      <xs:enumeration value="Description" />
+      <xs:enumeration value="IsShared" />
+      <xs:enumeration value="CGCCode" />
+      <xs:enumeration value="XCompany" />
+      <xs:enumeration value="Updatable" />
+      <xs:enumeration value="ExtQuery" />
+      <xs:enumeration value="SystemFlag" />
+      <xs:enumeration value="SysRowID" />
+      <xs:enumeration value="AllCompanies" />
+      <xs:enumeration value="RowMod" />
+      <xs:enumeration value="SpecifiedProperties" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DynamicQueryListRowColumnOrder" nillable="true" type="tns:DynamicQueryListRowColumnOrder" />
+</xs:schema>
